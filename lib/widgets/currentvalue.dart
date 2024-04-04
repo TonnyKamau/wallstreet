@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wallstreet/colours/colours.dart';
+
 class CurrentValue extends StatelessWidget {
   const CurrentValue({super.key});
 
@@ -25,15 +26,13 @@ class CurrentValue extends StatelessWidget {
                   TextSpan(
                     text: '\$1,',
                     style: TextStyle(
-                      color:
-                          icons, // Change the color of the decimal part here
+                      color: icons, // Change the color of the decimal part here
                     ),
                   ),
                   TextSpan(
                     text: '000,000',
                     style: TextStyle(
-                      color:
-                          icons, // Change the color of the decimal part here
+                      color: icons, // Change the color of the decimal part here
                     ),
                   ),
                   TextSpan(
@@ -46,7 +45,6 @@ class CurrentValue extends StatelessWidget {
                 ],
               ),
             ),
-           
             SvgPicture.asset(
               'assets/uptrend.svg',
               width: 50,
