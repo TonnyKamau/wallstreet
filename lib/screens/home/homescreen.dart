@@ -66,17 +66,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(
-                        'assets/menu.svg',
-                        width: 40,
-                        height: 40,
-                      ),
-                      color: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                    ),
+                    Material(
+                          color: Colors.transparent,
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: SvgPicture.asset(
+                              'assets/menu.svg',
+                              width: 40,
+                              height: 40,
+                            ),
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors
+                                .transparent, // Additionally set highlight color to transparent
+                            hoverColor: Colors
+                                .transparent, // Set hover color to transparent if needed
+                          ),
+                        ),
                   ],
                 ),
               ),
