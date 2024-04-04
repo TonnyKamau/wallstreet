@@ -15,40 +15,41 @@ class CurrentValue extends StatelessWidget {
         width: double.infinity,
         child: Row(
           children: [
-            RichText(
-              text: TextSpan(
-                style: GoogleFonts.barlowCondensed(
-                  fontSize: 65,
-                  fontWeight: FontWeight.w600,
-                  color: icons,
+            Expanded(
+              flex: 6,
+              child: RichText(
+                text: TextSpan(
+                  style: GoogleFonts.barlowCondensed(
+                    fontSize: 65, // Adjust the font size as needed
+                    fontWeight: FontWeight.w600,
+                    color: icons,
+                  ),
+                  children: const [
+                    TextSpan(
+                      text: '\$1,',
+                    ),
+                    TextSpan(
+                      text: '000,000',
+                    ),
+                    TextSpan(
+                      text: '.00',
+                      style: TextStyle(
+                        color:
+                            labels, // Change the color of the decimal part here
+                      ),
+                    ),
+                  ],
                 ),
-                children: const [
-                  TextSpan(
-                    text: '\$1,',
-                    style: TextStyle(
-                      color: icons, // Change the color of the decimal part here
-                    ),
-                  ),
-                  TextSpan(
-                    text: '000,000',
-                    style: TextStyle(
-                      color: icons, // Change the color of the decimal part here
-                    ),
-                  ),
-                  TextSpan(
-                    text: '.00',
-                    style: TextStyle(
-                      color:
-                          labels, // Change the color of the decimal part here
-                    ),
-                  ),
-                ],
               ),
             ),
-            SvgPicture.asset(
-              'assets/uptrend.svg',
-              width: 50,
-              height: 50,
+            // Add spacing between the text and the icon
+            Expanded(
+              flex: 1,
+              child: SvgPicture.asset(
+                'assets/uptrend.svg',
+                width: 50,
+                height: 50,
+              ),
             ),
           ],
         ),
