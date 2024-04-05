@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: SizedBox(
           height: 70,
           width: double.infinity,
@@ -19,26 +19,39 @@ class CustomAppBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SizedBox(
-                    width: 100,
-                    child: GestureDetector(
-                      onTap: () => print("Tapped"),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            'assets/visa.svg',
-                            width: 50,
-                            height: 50,
-                          ),
-                          SvgPicture.asset(
-                            'assets/mastercard.svg',
-                            width: 50,
-                            height: 50,
-                          ),
-                        ],
+                  GestureDetector(
+                    onTap: () {
+                      print('Tapped on');
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: icons,
+                          width: 2,
+                        ),
                       ),
-                    ),
+                      
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/visa.svg',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                                SvgPicture.asset(
+                                  'assets/mastercard.svg',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                   ),
+                  
                   Material(
                     color: Colors.transparent,
                     child: IconButton(
