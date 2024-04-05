@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:wallstreet/colours/colours.dart';
-
-
+import 'package:wallstreet/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,28 +16,31 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: browned,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: SizedBox(
-                height: 100,
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: (){},
-                      icon: const Icon(Icons.menu),
-                      color: icons,
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset('assets/menu.svg'),
-                      color: icons,
-                    ),
-                  ],
-                ),
+          const CustomAppBar(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Current Value',
+              style: GoogleFonts.poppins(
+                fontSize: 35,
+                fontWeight: FontWeight.w500,
+                color: icons,
+              ),
+            ),
+          ),
+          const CurrentValue(),
+          const Transact(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'Favorites',
+              style: GoogleFonts.poppins(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
+                color: labels,
               ),
             ),
           ),
@@ -48,3 +49,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

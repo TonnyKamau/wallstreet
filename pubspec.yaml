@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,11 @@ flutter:
     - assets/visa.svg
     - assets/mastercard.svg
     - assets/plus.svg
+    - assets/download.svg
+    - assets/upload.svg
+    - assets/menu2.svg
+    - assets/uptrend.svg
+    - assets/currency.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
