@@ -131,9 +131,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Portfolio',
                   style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 30,
-                    fontWeight: FontWeight.w600,
-                    color: labels,
+                    fontSize: 35,
+                    fontWeight: FontWeight.w500,
+                    color: icons,
                   ),
                 ),
                 IconButton(
