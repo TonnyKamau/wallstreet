@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 30,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
                 color: labels,
               ),
             ),
