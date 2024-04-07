@@ -4,7 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wallstreet/colours/colours.dart';
 
 class CurrentValue extends StatelessWidget {
-  const CurrentValue({super.key});
+  final bool isShowValue;
+  const CurrentValue({
+    super.key,
+    required this.isShowValue,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,32 +20,56 @@ class CurrentValue extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              flex: 6,
-              child: RichText(
-                text: TextSpan(
-                  style: GoogleFonts.barlowCondensed(
-                    fontSize: 65, // Adjust the font size as needed
-                    fontWeight: FontWeight.w600,
-                    color: icons,
-                  ),
-                  children: const [
-                    TextSpan(
-                      text: '\$1,',
-                    ),
-                    TextSpan(
-                      text: '000,000',
-                    ),
-                    TextSpan(
-                      text: '.00',
-                      style: TextStyle(
-                        color:
-                            labels, // Change the color of the decimal part here
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                flex: 6,
+                child: isShowValue
+                    ? RichText(
+                        text: TextSpan(
+                          style: GoogleFonts.barlowCondensed(
+                            fontSize: 65, // Adjust the font size as needed
+                            fontWeight: FontWeight.w600,
+                            color: icons,
+                          ),
+                          children: const [
+                            TextSpan(
+                              text: '\$1,',
+                            ),
+                            TextSpan(
+                              text: '000,000',
+                            ),
+                            TextSpan(
+                              text: '.00',
+                              style: TextStyle(
+                                color:
+                                    labels, // Change the color of the decimal part here
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : RichText(
+                        text: TextSpan(
+                          style: GoogleFonts.barlowCondensed(
+                            fontSize: 65, // Adjust the font size as needed
+                            fontWeight: FontWeight.w600,
+                            color: labels,
+                          ),
+                          children: const [
+                            TextSpan(
+                              text: '\$0,',
+                            ),
+                            TextSpan(
+                              text: '000,000',
+                            ),
+                            TextSpan(
+                              text: '.00',
+                              style: TextStyle(
+                                color:
+                                    labels, // Change the color of the decimal part here
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
             // Add spacing between the text and the icon
             Expanded(
               flex: 1,
