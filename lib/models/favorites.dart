@@ -13,6 +13,9 @@ class Favorites extends Equatable {
   final Widget image;
   final bool isUptrend;
   final Widget chart;
+  final bool isFavorite;
+  final bool inPortfolio;
+  final double portfolioValue;
 
   const Favorites({
     required this.name,
@@ -23,6 +26,9 @@ class Favorites extends Equatable {
     required this.image,
     required this.isUptrend,
     required this.chart,
+    required this.inPortfolio,
+    required this.isFavorite,
+    required this.portfolioValue,
   });
   static List<Favorites> favorites = [
     Favorites(
@@ -67,10 +73,16 @@ class Favorites extends Equatable {
                 show: false,
                 color: icons.withOpacity(0.3),
               ),
+              dotData: const FlDotData(
+                show: false,
+              ),
             ),
           ],
         ),
       ),
+      isFavorite: true,
+      inPortfolio: true,
+      portfolioValue: 145.12,
     ),
     Favorites(
       name: 'Tesla',
@@ -114,10 +126,16 @@ class Favorites extends Equatable {
                 show: false,
                 color: icons.withOpacity(0.3),
               ),
+              dotData: const FlDotData(
+                show: false,
+              ),
             ),
           ],
         ),
       ),
+      isFavorite: true,
+      inPortfolio: true,
+      portfolioValue: 672.37,
     ),
     Favorites(
       name: 'Google',
@@ -161,10 +179,16 @@ class Favorites extends Equatable {
                 show: false,
                 color: icons.withOpacity(0.3),
               ),
+              dotData: const FlDotData(
+                show: false,
+              ),
             ),
           ],
         ),
       ),
+      isFavorite: true,
+      inPortfolio: true,
+      portfolioValue: 2734.40,
     ),
     Favorites(
       name: 'Amazon',
@@ -208,10 +232,16 @@ class Favorites extends Equatable {
                 show: false,
                 color: icons.withOpacity(0.3),
               ),
+              dotData: const FlDotData(
+                show: false,
+              ),
             ),
           ],
         ),
       ),
+      isFavorite: true,
+      inPortfolio: true,
+      portfolioValue: 3372.20,
     ),
     Favorites(
       name: 'Microsoft',
@@ -255,10 +285,16 @@ class Favorites extends Equatable {
                 show: false,
                 color: icons.withOpacity(0.3),
               ),
+              dotData: const FlDotData(
+                show: false,
+              ),
             ),
           ],
         ),
       ),
+      isFavorite: true,
+      inPortfolio: true,
+      portfolioValue: 277.01,
     ),
   ];
   @override

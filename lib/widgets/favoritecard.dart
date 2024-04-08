@@ -1,9 +1,7 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:wallstreet/colours/colours.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -64,7 +62,8 @@ class FavoriteCard extends StatelessWidget {
                         children: [
                           Text(
                             name,
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 18,
                               fontWeight: FontWeight.w600,
                               color: icons,
@@ -72,7 +71,8 @@ class FavoriteCard extends StatelessWidget {
                           ),
                           Text(
                             symbol,
-                            style: GoogleFonts.poppins(
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                               color: labels,
@@ -91,7 +91,8 @@ class FavoriteCard extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 '\$${price.toStringAsFixed(2)}',
-                style: GoogleFonts.poppins(
+                style: const TextStyle(
+                  fontFamily: 'Poppins',
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: icons,
@@ -124,7 +125,8 @@ class FavoriteCard extends StatelessWidget {
                           ),
                     Text(
                       '${isUptrend ? '+' : '-'} ${changePercentage.toStringAsFixed(2)}%',
-                      style: GoogleFonts.poppins(
+                      style: const TextStyle(
+                        fontFamily: 'Poppins',
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),
