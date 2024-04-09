@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: SizedBox(
-              height: 250,
+              height: MediaQuery.of(context).size.height * 0.3,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -149,9 +149,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: Padding(
-               padding: const EdgeInsets.only(top: 0, bottom: 10, left: 10, right: 10),
+              padding: const EdgeInsets.only(
+                  top: 0, left: 10, right: 10),
               child: SizedBox(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.37,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: Favorites.favorites.length,
@@ -164,7 +165,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               symbol: favorites[index].symbol,
                               price: favorites[index].price,
                               portfolioValue: favorites[index].portfolioValue,
-                              changePercentage: favorites[index].changePercentage,
+                              changePercentage:
+                                  favorites[index].changePercentage,
                               image: favorites[index].image,
                               chart: favorites[index].chart,
                               isUptrend: favorites[index].isUptrend,

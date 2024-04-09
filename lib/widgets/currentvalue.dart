@@ -15,7 +15,7 @@ class CurrentValue extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SizedBox(
-        height: 80,
+        height: MediaQuery.of(context).size.height * 0.1,
         width: double.infinity,
         child: Row(
           children: [
@@ -25,7 +25,7 @@ class CurrentValue extends StatelessWidget {
                     ? RichText(
                         text: TextSpan(
                           style: GoogleFonts.barlowCondensed(
-                            fontSize: 65, // Adjust the font size as needed
+                            fontSize: 60, // Adjust the font size as needed
                             fontWeight: FontWeight.w600,
                             color: icons,
                           ),
@@ -46,30 +46,13 @@ class CurrentValue extends StatelessWidget {
                           ],
                         ),
                       )
-                    : RichText(
-                        text: TextSpan(
-                          style: GoogleFonts.barlowCondensed(
-                            fontSize: 65, // Adjust the font size as needed
+                    : Text('\$0,000,000.00',
+                    style: GoogleFonts.barlowCondensed(
+                            fontSize: 60, // Adjust the font size as needed
                             fontWeight: FontWeight.w600,
                             color: labels,
                           ),
-                          children: const [
-                            TextSpan(
-                              text: '\$0,',
-                            ),
-                            TextSpan(
-                              text: '000,000',
-                            ),
-                            TextSpan(
-                              text: '.00',
-                              style: TextStyle(
-                                color:
-                                    labels, // Change the color of the decimal part here
-                              ),
-                            ),
-                          ],
-                        ),
-                      )),
+                    ),),
             // Add spacing between the text and the icon
             Expanded(
               flex: 1,
