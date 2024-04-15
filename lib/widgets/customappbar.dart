@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:wallstreet/colours/colours.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -19,43 +20,39 @@ class CustomAppBar extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      print('Tapped on');
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: icons,
-                          width: 2,
-                        ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: icons,
+                        width: 2,
                       ),
-                      
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: Row(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/visa.svg',
-                                  width: 50,
-                                  height: 50,
-                                ),
-                                SvgPicture.asset(
-                                  'assets/mastercard.svg',
-                                  width: 50,
-                                  height: 50,
-                                ),
-                              ],
-                            ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/visa.svg',
+                            width: 50,
+                            height: 50,
                           ),
-                        ),
+                          SvgPicture.asset(
+                            'assets/mastercard.svg',
+                            width: 50,
+                            height: 50,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  
                   Material(
                     color: Colors.transparent,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //create add payment method pop up
+                        Get.toNamed('/payment_details');
+                      },
                       icon: SvgPicture.asset(
                         'assets/plus.svg',
                         width: 50,

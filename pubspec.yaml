@@ -85,7 +85,7 @@ flutter:
     - assets/eye.svg
     - assets/arrow-sm-up.svg
     - assets/arrow-sm-down.svg
-    
+    - assets/scan.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
