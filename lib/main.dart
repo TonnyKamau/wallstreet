@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
      getPages: [
         GetPage(name: '/', page: () => const OnboardingScreen()),
         GetPage(name: '/home', page: () => const HomeScreen()),
-        GetPage(name: '/payment_details', page: () => const AddCard()),
+        GetPage(name: '/payment_details', page: () => AddCard()),
         GetPage(name: '/scan_card', page: () => const ScanCard()),
       ],
       title: 'KWallStreet',
