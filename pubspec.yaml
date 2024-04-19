@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   equatable: ^2.0.5
   fl_chart: ^0.67.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -85,8 +86,11 @@ flutter:
     - assets/eye.svg
     - assets/arrow-sm-up.svg
     - assets/arrow-sm-down.svg
-    
-
+    - assets/scan.svg
+    - assets/waves.svg
+    - assets/visa-3.svg
+    - assets/mastercard-3.svg
+    - assets/clear-circle.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

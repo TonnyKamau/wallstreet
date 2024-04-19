@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wallstreet/colours/colours.dart';
+import 'package:wallstreet/screens/card/card.dart';
 import 'screens/screens.dart';
 
 void main() {
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
      getPages: [
         GetPage(name: '/', page: () => const OnboardingScreen()),
         GetPage(name: '/home', page: () => const HomeScreen()),
+        GetPage(name: '/payment_details', page: () => AddCard()),
+        GetPage(name: '/scan_card', page: () => const ScanCard()),
       ],
       title: 'KWallStreet',
       theme: ThemeData(

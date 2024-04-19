@@ -46,7 +46,7 @@ class PortfolioCard extends StatelessWidget {
                       style: const TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: labels,
                       ),
                     ),
