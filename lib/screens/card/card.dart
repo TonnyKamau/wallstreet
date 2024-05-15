@@ -199,290 +199,292 @@ class _FormInputState extends State<_FormInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: widget.formKey,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
+    return SingleChildScrollView(
+      child: Form(
+        key: widget.formKey,
+        child: Column(
+          children: [
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: icons, // Adjust the color as needed
-                  width: 1.0, // Adjust the width as needed
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: icons, // Adjust the color as needed
+                    width: 1.0, // Adjust the width as needed
+                  ),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _cardNumberController,
-                      cursorColor: icons,
-                      cursorWidth: 1.0,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        labelText: 'Card number',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: icons,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _cardNumberController,
+                        cursorColor: icons,
+                        cursorWidth: 1.0,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          labelText: 'Card number',
+                          labelStyle: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: icons,
+                          ),
                         ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter card number';
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          setState(() {});
+                        },
                       ),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter card number';
-                        }
-                        return null;
-                      },
-                      onChanged: (value) {
-                        setState(() {});
+                    ),
+                    IconButton(
+                      icon: SvgPicture.asset('assets/clear-circle.svg',
+                          width: 20, height: 20),
+                      onPressed: () {
+                        _cardNumberController.clear();
                       },
                     ),
-                  ),
-                  IconButton(
-                    icon: SvgPicture.asset('assets/clear-circle.svg',
-                        width: 20, height: 20),
-                    onPressed: () {
-                      _cardNumberController.clear();
-                    },
-                  ),
-                  isMastercardOrVisa(_cardNumberController.text)
-                      ? SvgPicture.asset('assets/visa-3.svg',
-                          width: 30, height: 30)
-                      : SvgPicture.asset('assets/mastercard-3.svg',
-                          width: 30, height: 30),
-                ],
+                    isMastercardOrVisa(_cardNumberController.text)
+                        ? SvgPicture.asset('assets/visa-3.svg',
+                            width: 30, height: 30)
+                        : SvgPicture.asset('assets/mastercard-3.svg',
+                            width: 30, height: 30),
+                  ],
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
+            const SizedBox(height: 20),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: icons, // Adjust the color as needed
-                  width: 1.0, // Adjust the width as needed
-                ),
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: TextFormField(
-                controller: _cardHolderController,
-                cursorColor: icons,
-                cursorWidth: 1.0,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  labelText: 'Card holder name',
-                  labelStyle: const TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: icons,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: icons, // Adjust the color as needed
+                    width: 1.0, // Adjust the width as needed
                   ),
-                  // Add suffix icon for the clear button
-                  suffixIcon: IconButton(
-                    icon: SvgPicture.asset('assets/clear-circle.svg',
-                        width: 20, height: 20),
-                    onPressed: () {
-                      _cardHolderController.clear();
-                    },
-                  ),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
-                keyboardType: TextInputType.text,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter card holder';
-                  }
-                  return null;
-                },
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 20),
-          Row(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: icons, // Adjust the color as needed
-                        width: 1.0, // Adjust the width as needed
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
+                child: TextFormField(
+                  controller: _cardHolderController,
+                  cursorColor: icons,
+                  cursorWidth: 1.0,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'Card holder name',
+                    labelStyle: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: icons,
                     ),
-                    child: TextFormField(
-                      controller: _expiryDateController,
-                      cursorColor: icons,
-                      cursorWidth: 1.0,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        labelText: 'Expires on',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: icons,
-                        ),
-                        hintText: 'MM/YY',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: icons,
-                        ),
-                      ),
-                      keyboardType: TextInputType.datetime,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter expiry date';
-                        }
-                        return null;
+                    // Add suffix icon for the clear button
+                    suffixIcon: IconButton(
+                      icon: SvgPicture.asset('assets/clear-circle.svg',
+                          width: 20, height: 20),
+                      onPressed: () {
+                        _cardHolderController.clear();
                       },
                     ),
                   ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: icons, // Adjust the color as needed
-                        width: 1.0, // Adjust the width as needed
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: TextFormField(
-                      controller: _cvvController,
-                      cursorColor: icons,
-                      cursorWidth: 1.0,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        labelText: '3-Digit CVV',
-                        labelStyle: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: icons,
-                        ),
-                        hintText: '123',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                          color: icons,
-                        ),
-                      ),
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter CVV';
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          // Save card for future checkbox
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                Checkbox(
-                  value: _isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      _isChecked = value!;
-                    });
+                  keyboardType: TextInputType.text,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter card holder';
+                    }
+                    return null;
                   },
-                  activeColor: icons,
-                  checkColor: brownedLight,
                 ),
-                const Text(
-                  'Save card for future transactions',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: icons,
+              ),
+            ),
+      
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: icons, // Adjust the color as needed
+                          width: 1.0, // Adjust the width as needed
+                        ),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: TextFormField(
+                        controller: _expiryDateController,
+                        cursorColor: icons,
+                        cursorWidth: 1.0,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          labelText: 'Expires on',
+                          labelStyle: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: icons,
+                          ),
+                          hintText: 'MM/YY',
+                          hintStyle: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: icons,
+                          ),
+                        ),
+                        keyboardType: TextInputType.datetime,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter expiry date';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: icons, // Adjust the color as needed
+                          width: 1.0, // Adjust the width as needed
+                        ),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: TextFormField(
+                        controller: _cvvController,
+                        cursorColor: icons,
+                        cursorWidth: 1.0,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          labelText: '3-Digit CVV',
+                          labelStyle: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: icons,
+                          ),
+                          hintText: '123',
+                          hintStyle: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: icons,
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter CVV';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: RichText(
-              text: const TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 16,
-                  color: icons, // Change this color as needed
-                ),
+            // Save card for future checkbox
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
                 children: [
-                  TextSpan(
-                    text:
-                        'By clicking the button below, you confirm that you have read and accept ',
+                  Checkbox(
+                    value: _isChecked,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isChecked = value!;
+                      });
+                    },
+                    activeColor: icons,
+                    checkColor: brownedLight,
                   ),
-                  TextSpan(
-                    text: 'Terms & Conditions',
+                  const Text(
+                    'Save card for future transactions',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: labels, // Change this color as needed
+                      fontFamily: 'Poppins',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: icons,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ElevatedButton(
-              onPressed: () {
-                if (widget.formKey.currentState!.validate()) {
-                  // Process the data
-                  // Save the card details
-                  // Redirect to the card details page
-                  Get.toNamed('card_details');
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: icons, // Change this color as needed
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 100),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              child: const Text(
-                'Save',
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  color: brownedLight,
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: RichText(
+                text: const TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 16,
+                    color: icons, // Change this color as needed
+                  ),
+                  children: [
+                    TextSpan(
+                      text:
+                          'By clicking the button below, you confirm that you have read and accept ',
+                    ),
+                    TextSpan(
+                      text: 'Terms & Conditions',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: labels, // Change this color as needed
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ElevatedButton(
+                onPressed: () {
+                  if (widget.formKey.currentState!.validate()) {
+                    // Process the data
+                    // Save the card details
+                    // Redirect to the card details page
+                    Get.toNamed('card_details');
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: icons, // Change this color as needed
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 100),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: const Text(
+                  'Save',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: brownedLight,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
