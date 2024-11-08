@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../colours/colours.dart';
 
 class Transact extends StatelessWidget {
-  const Transact({Key? key});
+  const Transact({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,16 +44,16 @@ class Transact extends StatelessWidget {
                     ),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    overlayColor: MaterialStateProperty.all<Color>(
+                    overlayColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    foregroundColor: MaterialStateProperty.all<Color>(
+                    foregroundColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.zero,
                     ),
                   ),
@@ -103,16 +103,16 @@ class Transact extends StatelessWidget {
                     ),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
+                    backgroundColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    overlayColor: MaterialStateProperty.all<Color>(
+                    overlayColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    foregroundColor: MaterialStateProperty.all<Color>(
+                    foregroundColor: WidgetStateProperty.all<Color>(
                       Colors.transparent,
                     ),
-                    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.zero,
                     ),
                   ),

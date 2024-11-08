@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wallstreet/colours/colours.dart';
 import 'package:wallstreet/models/favorites.dart';
@@ -149,8 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(
-                  top: 0, left: 10, right: 10),
+              padding: const EdgeInsets.only(top: 0, left: 10, right: 10),
               child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.37,
                 child: ListView.builder(

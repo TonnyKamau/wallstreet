@@ -171,9 +171,8 @@ class _AddCardState extends State<AddCard> {
 
 class _FormInput extends StatefulWidget {
   const _FormInput({
-    Key? key,
     required this.formKey,
-  }) : super(key: key);
+  });
 
   final GlobalKey<FormState> formKey;
 

@@ -1,8 +1,9 @@
-import 'package:equatable/equatable.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:wallstreet/colours/colours.dart';
+import 'package:equatable/equatable.dart';
+
+import '../colours/colours.dart';
 
 class Favorites extends Equatable {
   final String name;
@@ -57,13 +58,13 @@ class Favorites extends Equatable {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 0),
-                FlSpot(1, 3),
-                FlSpot(2, 2),
-                FlSpot(3, 5),
-                FlSpot(4, 2),
-                FlSpot(5, 2),
-                FlSpot(6, 1),
+                const FlSpot(0, 0),
+                const FlSpot(1, 3),
+                const FlSpot(2, 2),
+                const FlSpot(3, 5),
+                const FlSpot(4, 2),
+                const FlSpot(5, 2),
+                const FlSpot(6, 1),
               ],
               isCurved: true,
               color: icons,
@@ -110,13 +111,13 @@ class Favorites extends Equatable {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 0),
-                FlSpot(1, 3),
-                FlSpot(2, 2),
-                FlSpot(3, 5),
-                FlSpot(4, 2),
-                FlSpot(5, 2),
-                FlSpot(6, 1),
+                const FlSpot(0, 0),
+                const FlSpot(1, 3),
+                const FlSpot(2, 2),
+                const FlSpot(3, 5),
+                const FlSpot(4, 2),
+                const FlSpot(5, 2),
+                const FlSpot(6, 1),
               ],
               isCurved: true,
               color: icons,
@@ -163,13 +164,13 @@ class Favorites extends Equatable {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 0),
-                FlSpot(1, 3),
-                FlSpot(2, 2),
-                FlSpot(3, 5),
-                FlSpot(4, 2),
-                FlSpot(5, 2),
-                FlSpot(6, 1),
+                const FlSpot(0, 0),
+                const FlSpot(1, 3),
+                const FlSpot(2, 2),
+                const FlSpot(3, 5),
+                const FlSpot(4, 2),
+                const FlSpot(5, 2),
+                const FlSpot(6, 1),
               ],
               isCurved: true,
               color: icons,
@@ -216,13 +217,13 @@ class Favorites extends Equatable {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 0),
-                FlSpot(1, 3),
-                FlSpot(2, 2),
-                FlSpot(3, 5),
-                FlSpot(4, 2),
-                FlSpot(5, 2),
-                FlSpot(6, 1),
+                const FlSpot(0, 0),
+                const FlSpot(1, 3),
+                const FlSpot(2, 2),
+                const FlSpot(3, 5),
+                const FlSpot(4, 2),
+                const FlSpot(5, 2),
+                const FlSpot(6, 1),
               ],
               isCurved: true,
               color: icons,
@@ -269,13 +270,13 @@ class Favorites extends Equatable {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 0),
-                FlSpot(1, 3),
-                FlSpot(2, 2),
-                FlSpot(3, 5),
-                FlSpot(4, 2),
-                FlSpot(5, 2),
-                FlSpot(6, 1),
+                const FlSpot(0, 0),
+                const FlSpot(1, 3),
+                const FlSpot(2, 2),
+                const FlSpot(3, 5),
+                const FlSpot(4, 2),
+                const FlSpot(5, 2),
+                const FlSpot(6, 1),
               ],
               isCurved: true,
               color: icons,
