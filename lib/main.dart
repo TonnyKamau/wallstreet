@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:wallstreet/colours/colours.dart';
+import 'package:wallstreet/screens/card/card.dart';
+import 'package:wallstreet/screens/card/scan.dart';
+
 import 'screens/screens.dart';
 
 void main() {
@@ -9,10 +11,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const OnboardingScreen()),
@@ -20,9 +23,10 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/payment_details', page: () => const AddCard()),
         GetPage(name: '/scan_card', page: () => const ScanCard()),
       ],
+      debugShowCheckedModeBanner: false,
       title: 'KWallStreet',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: icons),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const OnboardingScreen(),

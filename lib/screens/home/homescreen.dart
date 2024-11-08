@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wallstreet/colours/colours.dart';
 import 'package:wallstreet/models/favorites.dart';
-import 'package:wallstreet/widgets/widgets.dart';
+import 'package:wallstreet/widgets/currentvalue.dart';
+import 'package:wallstreet/widgets/customappbar.dart';
+import 'package:wallstreet/widgets/favoritecard.dart';
+import 'package:wallstreet/widgets/portfoliocard.dart';
+import 'package:wallstreet/widgets/transact.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
